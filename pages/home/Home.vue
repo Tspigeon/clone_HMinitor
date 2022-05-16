@@ -9,11 +9,12 @@
                 <div class="panel">
                     <h2></h2>
                     <!-- <common-battery></common-battery> -->
-                    <img src="../../public/img/储氢罐.png" style="height:300px;margin-left:90px">
+                    <img src="../../public/img/储氢罐.png" style="height:300px;margin-left:90px" @click="toHStorage">
                     <div class="panel-footer"></div>
                 </div>
-                <div  style="margin-top:30px;">
+                <div  class="panel" style="margin-top:30px;">
                     <img src="../../public/img/bomb1.png" style="margin-left:150px;margin-top:100px">
+                    <common-tnt class="tnt"></common-tnt>
                 </div>
             </div>
             <!-- 中间 -->
@@ -29,7 +30,7 @@
                 </div>
                 <div class="panel" style="margin-top:30px;">
                     <!-- <h2>历史车载氢部件安全度</h2> -->
-                    <common-Tnt></common-Tnt>
+                    <common-h-safe></common-h-safe>
                     <div class="panel-footer"></div>
                 </div>   
             </div>
@@ -67,10 +68,11 @@
     import CommonAll from '../../src/components/right/CommonAll.vue'
     import Warning from '../../src/components/center/Warning.vue'
     import CommonCon from '../../src/components/right/CommonCon.vue'
-    import CommonTnt from '../../src/components/center/CommonHSafe.vue'
-    import CommonBattery from '../../src/components/left/CommonBattery.vue'
+    import CommonHSafe from '../../src/components/center/CommonHSafe.vue'
+    import CommonBattery from '../../src/components/secondpage/CommonBattery.vue'
     import CommonConAll from '../../src/components/center/CommonConAll.vue'
     import CommonPart from '../../src/components/right/CommonPart.vue'
+    import CommonTnt from "../../src/components/left/CommonTnt.vue"
 
     export default {
         name:'Home',
@@ -84,8 +86,16 @@
             CommonTnt,
             CommonBattery,
             CommonConAll,
-            CommonPart
-        }
+            CommonPart,
+            CommonHSafe
+        },
+        methods: {
+            toHStorage(){
+                this.$router.push({
+                    name:"HStorage"
+                })
+            }
+        },
     }
 </script>    
 
@@ -198,5 +208,9 @@
         color: #fff;
         text-align: center;
         font-size: 50px;
+    }
+    .tnt{
+        display: absolute;
+        top:-20%;
     }
 </style>

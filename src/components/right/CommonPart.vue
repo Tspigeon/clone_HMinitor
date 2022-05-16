@@ -1,14 +1,21 @@
 <template>
-    <div ref="chart" style="height:240px;"></div>
+    <div ref="chart" style="height:240px;" @click="toPart"></div>
 </template>
 
 <script>
 import * as echarts from 'echarts';
 export default {
-    name:'CommonConAll',
+    name:'CommonPart',
     data() {
         return {
             
+        }
+    },
+    methods: {
+        toPart(){
+            this.$router.push({
+                name:'part'
+            })
         }
     },
     mounted() {
@@ -30,10 +37,10 @@ export default {
         // 指定图表的配置项和数据
         var option = {
             color:[
-                '#000000',
-                '#FF0000',
-                '#1E90FF',
-                '#00FF00'
+                '#05f8d6',
+                '#fdd845',
+                '#c90444',
+                '#22ed7c'
             ],
             tooltip: {
                         trigger: 'axis',
@@ -69,22 +76,48 @@ export default {
                         {
                             name: '储氢罐',
                             type: 'bar',
-                            data: data1
+                            data: data1,
+                            itemStyle: { // 使用方法一的写法
+                                color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                                    { offset: 0, color: '#29bdd9' },
+                                    { offset: 0.7, color: '#2378f7' },
+                                    { offset: 1, color: '#276ace' }
+                                ])
+                            }
                         },
                         {
                             name: '燃料电池',
                             type: 'bar',
-                            data: data2
-                        },
+                            data: data2,
+                            itemStyle: { // 使用方法一的写法
+                                color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                                    { offset: 0, color: '#ff9569' },
+                                    // { offset: 0.7, color: '#2378f7' },
+                                    { offset: 1, color: '#e92758' }
+                                ])
+                                }
+                            },
                         {
                             name: '再循环泵',
                             type: 'bar',
-                            data: data3
+                            data: data3,
+                            itemStyle: { // 使用方法一的写法
+                                color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                                    { offset: 0, color: '#f9f047' },
+                                    { offset: 1, color: '#0fd850' }
+                                ])
+                            }
                         },
                         {
                             name: '加注口',
                             type: 'bar',
-                            data: data4
+                            data: data4,
+                             itemStyle: { // 使用方法一的写法
+                                color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                                    { offset: 0, color: '#FFD700' },
+                                    { offset: 1, color: '#FF9912' }
+                                ])
+                            }
                         }
                     ],
                 title:{

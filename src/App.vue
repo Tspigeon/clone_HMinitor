@@ -12,7 +12,8 @@
 
 <style>
     html{
-        background: url(../public/img/bg.jpg) no-repeat top center;
+        background: url(../public/img/bg.jpg);
+        background-size: cover;
     }
     *{
         margin: 0;

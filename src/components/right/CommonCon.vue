@@ -5,7 +5,7 @@
 <script>
 import * as echarts from 'echarts';
 export default {
-    name:'CommonPeopleSafe',
+    name:'CommonCon',
     data() {
         return {
             

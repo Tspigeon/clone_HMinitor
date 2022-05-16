@@ -15,13 +15,6 @@ export default {
             src:"../../../public/img/round1"
         }
     },
-    methods: {
-        toPeople(){
-            this.$router.push({
-                name:'people'
-            })
-        }
-    },
     mounted(){
         var value = 0.8, // 值，0~1之间
         startAngle = 215, // 开始角度

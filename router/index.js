@@ -13,14 +13,14 @@ const routes = [{
             component:()=>import('../pages/home/Home.vue')
         },
         {
-            name:'car',
-            path:'Car',
-            component:()=>import('../pages/secondPage/Car.vue')
+            name:'part',
+            path:'Part',
+            component:()=>import('../pages/secondPage/Part.vue')
         },
         {
-            name:'people',
-            path:'People',
-            component:()=>import('../pages/secondPage/People.vue')
+            name:'HStorage',
+            path:'HStorage',
+            component:()=>import('../pages/secondPage/HStorage')
         },
         ]
 }

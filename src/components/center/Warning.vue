@@ -1,5 +1,5 @@
 <template>
-    <div class="warning" :style="{'background-color':color}">
+    <div class="warning" :style="{'background':`linear-gradient(to right,${color},transparent)`}">
         <div v-show="warnData == '0'" style="
         font-size:20px;
         " >当前车辆状况良好</div>
@@ -35,6 +35,8 @@ export default {
         position: relative;
         width: 700px;
         height: 200px;
-        margin-left: 250px;
+        margin-left: 50%;
+        text-align: center;
+        line-height:200px;
     }
 </style>
